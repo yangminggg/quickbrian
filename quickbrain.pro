@@ -18,3 +18,5 @@ SOURCES += main.cpp\
 HEADERS  += widget.h
 
 FORMS    += widget.ui
+
+INCLUDEPATH += ./eigen
