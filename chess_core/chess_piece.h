@@ -24,7 +24,7 @@ p卒 43 44 45 46 47
 黑方棋子 & 32 == 1
 */
 #include <QString>
-
+#include <QVector>
 
 class chess_piece
 {
@@ -83,6 +83,48 @@ public:
             }
         }
         return "ERROR";
+    }
+    static QVector<chess_piece> GetOpenChessPiece(void)
+    {
+        QVector<chess_piece> piece_buf;
+        piece_buf.clear();
+        piece_buf.append(BuildChessPiece(JIANG,16,0,4,1));
+        piece_buf.append(BuildChessPiece(CHE,23,0,0,1));
+        piece_buf.append(BuildChessPiece(CHE,24,0,8,1));
+        piece_buf.append(BuildChessPiece(MA,21,0,1,1));
+        piece_buf.append(BuildChessPiece(MA,22,0,7,1));
+        piece_buf.append(BuildChessPiece(XIANG,19,0,2,1));
+        piece_buf.append(BuildChessPiece(XIANG,20,0,6,1));
+        piece_buf.append(BuildChessPiece(SHI,17,0,3,1));
+        piece_buf.append(BuildChessPiece(SHI,18,0,5,1));
+        piece_buf.append(BuildChessPiece(PAO,25,2,1,1));
+        piece_buf.append(BuildChessPiece(PAO,26,2,7,1));
+        piece_buf.append(BuildChessPiece(BING,27,3,0,1));
+        piece_buf.append(BuildChessPiece(BING,28,3,2,1));
+        piece_buf.append(BuildChessPiece(BING,29,3,4,1));
+        piece_buf.append(BuildChessPiece(BING,30,3,6,1));
+        piece_buf.append(BuildChessPiece(BING,31,3,8,1));
+
+        piece_buf.append(BuildChessPiece(JIANG,16+16,9,4,1));
+        piece_buf.append(BuildChessPiece(CHE,23+16,9,0,1));
+        piece_buf.append(BuildChessPiece(CHE,24+16,9,8,1));
+        piece_buf.append(BuildChessPiece(MA,21+16,9,1,1));
+        piece_buf.append(BuildChessPiece(MA,22+16,9,7,1));
+        piece_buf.append(BuildChessPiece(XIANG,19+16,9,2,1));
+        piece_buf.append(BuildChessPiece(XIANG,20+16,9,6,1));
+        piece_buf.append(BuildChessPiece(SHI,17+16,9,3,1));
+        piece_buf.append(BuildChessPiece(SHI,18+16,9,5,1));
+
+        piece_buf.append(BuildChessPiece(PAO,25+16,7,1,1));
+        piece_buf.append(BuildChessPiece(PAO,26+16,7,7,1));
+        piece_buf.append(BuildChessPiece(BING,27+16,6,0,1));
+        piece_buf.append(BuildChessPiece(BING,28+16,6,2,1));
+        piece_buf.append(BuildChessPiece(BING,29+16,6,4,1));
+        piece_buf.append(BuildChessPiece(BING,30+16,6,6,1));
+        piece_buf.append(BuildChessPiece(BING,31+16,6,8,1));
+
+
+        return piece_buf;
     }
     static chess_piece BuildChessPiece(enum m_emTYPE type_,int id_,int m_nRow_,int m_nCol_,double value_)
     {

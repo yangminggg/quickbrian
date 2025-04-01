@@ -36,6 +36,7 @@ public:
     QVector<chess_piece> piece_buf;
 public:
     void AddShowChessPiece(chess_piece data);
+    void AddShowChessPieces(QVector<chess_piece> data);
 private:
     Ui::ChessBoard *ui;
 };

@@ -81,11 +81,11 @@ void ChessBoard::drawChessPieces(QPainter& painter,chess_piece &data)   //绘画
     QPoint temp = center(data.m_nRow,data.m_nCol);
     QRect rect(temp.x()-m_nR, temp.y()-m_nR, m_nD, m_nD);
 
-    if((data.id&16) == 16)
+    if((data.id&32) == 32)
     {
         painter.setBrush(QBrush(QColor(64,64,196, 80)));
     }
-    else if((data.id& 32) == 32)
+    else if((data.id& 16) == 16)
     {
         painter.setBrush(QBrush(QColor(64,64,196, 10)));
     }
@@ -97,11 +97,11 @@ void ChessBoard::drawChessPieces(QPainter& painter,chess_piece &data)   //绘画
     painter.setPen(QColor(0, 0, 0));
     painter.drawEllipse(center(data.m_nRow,data.m_nCol), m_nR, m_nR);  //绘画圆形
     painter.setFont(QFont("华文行楷", m_nR, 700));
-    if((data.id&16) == 1)
+    if((data.id&32) == 32)
     {
         painter.setPen(QColor(0, 0, 0));
     }
-    else if((data.id&32) == 1)
+    else if((data.id&16) == 16)
     {
         painter.setPen(QColor(255, 0, 0));
     }
@@ -110,4 +110,11 @@ void ChessBoard::drawChessPieces(QPainter& painter,chess_piece &data)   //绘画
 void ChessBoard::AddShowChessPiece(chess_piece data)
 {
     piece_buf.append(data);
+}
+void ChessBoard::AddShowChessPieces(QVector<chess_piece> data)
+{
+    for(int i = 0; i < data.length(); i++)
+    {
+        piece_buf.append(data[i]);
+    }
 }

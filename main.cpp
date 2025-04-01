@@ -13,7 +13,7 @@ int main(int argc, char *argv[])
     w.show();
     Eigen::FFT<double> fft;
     ChessBoard b;
-    b.AddShowChessPiece(chess_piece::BuildChessPiece(chess_piece::JIANG,16,0,4,1));
+    b.AddShowChessPieces(chess_piece::GetOpenChessPiece());
     b.show();
 
     FEN_TOOL::test();
