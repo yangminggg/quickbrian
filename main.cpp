@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
     b.AddShowChessPieces(chess_piece::GetOpenChessPiece());
     b.show();
 
-    FEN_TOOL::test();
+    //FEN_TOOL::test();
 
     return a.exec();
 }

@@ -143,6 +143,7 @@ public:
     int  m_nRow;//行
     int  m_nCol;//列
     double value;//权重
+    bool is_select = false;//是否被选中
     QString name;
 };
 
